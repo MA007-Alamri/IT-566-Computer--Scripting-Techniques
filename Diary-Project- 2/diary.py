@@ -1,16 +1,14 @@
 def add_entry(file, date, text):
-    diary = open(file,"a")
-    print(date, text, file=diary)
-    diary.close()
+    with open(file,"a") as diary:
+     diary.write(f'{date} {text}\n')
 
 def view_entries(file):
-    diary = open (file)
-    print(diary.read())
-    diary.close()
+    with open(file,'r') as diary:
+       print(diary.read())
 
 def filter_entries(file, date):
-    diary = open(file)
-    for line in diary:
-     if line.startswith(date + " "):
-      print(line.strip())
-    diary.close()
+    with open(file, 'r') as diary:
+        lines = diary.readlines()
+        for line in lines:
+           if line[:10] == date:
+              print(line)

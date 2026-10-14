@@ -9,19 +9,18 @@ while True:
 5. Exit""")
 
 
-
     choice = input("Your choice: ")
-    if choice=="1":
+    if choice =="1":
         date = input("date:")
         text = input("Entry: ")
         add_entry(file, date, text)
-    if choice== "2":
+    if choice == "2":
         view_entries(file)
-    if choice== "3":
+    if choice == "3":
         date = input("Search date")
-        filter_entries(file,date)
-    if choice=="4":
-        file= input("change diary file")
-    if choice=="5":
+        filter_entries(file, date)
+    if choice =="4":
+        file = input("change diary file")
+    if choice =="5":
         break
 
