@@ -1,7 +1,10 @@
 """My Family Monthly Expenses """
 
+from alamri_menu.family_menu import ExpenseFamilyMenu
+
 def main():
-    print("Alamri Monthly Expense Tracker")
+    ExpenseFamilyMenu().display_menu()
+
 
 
 if __name__ == "__main__":
