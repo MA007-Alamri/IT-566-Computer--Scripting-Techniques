@@ -1,4 +1,9 @@
+from alamri_spending.monthly_expenses import MonthlyExpenses
+
 class ExpenseFamilyMenu:
+    def __inti__(self):
+        self.tracker = MonthlyExpenses()
+
     def display_menu(self):
         print("Alamri Monthly Expense Tracker")
         print("1. Add Family Expense")
@@ -9,5 +14,5 @@ class ExpenseFamilyMenu:
         print("6. open JSON File")
         print("7. Download CSV Report")
         print("8. Exit")
-        choice = input("Select a number from 1 to 7:")
+        choice = input("Select a number from 1 to 8:")
 

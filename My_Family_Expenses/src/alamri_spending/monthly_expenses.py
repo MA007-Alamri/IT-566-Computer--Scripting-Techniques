@@ -7,8 +7,9 @@ class MonthlyExpenses:
 
     #function to add a new family expense
 
-    def add_expense(self):
-        pass
+    def add_expense(self, expense):
+        self.expenses.append(expense)
+        print("Expense added successfully.")
 
     #function to view all family expense
 
