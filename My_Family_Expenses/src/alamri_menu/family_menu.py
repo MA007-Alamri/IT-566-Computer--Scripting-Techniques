@@ -1,7 +1,7 @@
 from alamri_spending.monthly_expenses import MonthlyExpenses
 
 class ExpenseFamilyMenu:
-    def __inti__(self):
+    def __init__(self):
         self.tracker = MonthlyExpenses()
 
     def display_menu(self):
@@ -15,4 +15,11 @@ class ExpenseFamilyMenu:
         print("7. Download CSV Report")
         print("8. Exit")
         choice = input("Select a number from 1 to 8:")
+
+        if choice == "1":
+           amount = input("expense amount:$") 
+           category = input("expense category:")
+           date= input("expense date (YYYY-MM-DD):")
+           expense = {"amount": float(amount),"category": category, "date": date}
+           self.tracker.add_expense(expense)
 
