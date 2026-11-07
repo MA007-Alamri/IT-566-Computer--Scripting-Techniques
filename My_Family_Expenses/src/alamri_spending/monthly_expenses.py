@@ -14,7 +14,12 @@ class MonthlyExpenses:
     #function to view all family expense
 
     def view_expenses(self):
-        pass
+        if not self.expenses:
+            print ("No family expenses found.")
+            return
+        for expense in self.expenses:
+            print (expense["date"], "-", expense["category"], "-", expense["amount"])
+
 
     #function to find expenses by date or category
 
