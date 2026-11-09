@@ -31,6 +31,13 @@ class MonthlyExpenses:
         print("4. back to main menu")
         search_choice = input("choose a search option(1-4):")
 
+        if search_choice =="1":
+            category =input("search for a category:")
+            for item in self.expenses:
+                if item["category"]== category:
+                    print(item["date"], "$", item["amount"])
+
+
 
 
     #function to show total amount spent
