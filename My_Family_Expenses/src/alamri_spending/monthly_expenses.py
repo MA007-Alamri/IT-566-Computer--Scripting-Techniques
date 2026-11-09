@@ -39,8 +39,8 @@ class MonthlyExpenses:
 
 
         if search_choice =="2":
-            print("Date search selected")
-            from_date = input("from (YYYY-MM-DD):");to_date = input("To (YYYY-MM-DD):")
+            from_date = input("from (YYYY-MM-DD):")
+            to_date = input("To (YYYY-MM-DD):")
             for item in self.expenses:
                 date = item["date"]
                 if from_date <= date <= to_date:
@@ -49,7 +49,8 @@ class MonthlyExpenses:
 
         if search_choice =="3":
             category = input("category:")
-            from_date = input("from (YYYY-MM-DD):");to_date = input("To (YYYY-MM-DD):")
+            from_date = input("from (YYYY-MM-DD):")
+            to_date = input("To (YYYY-MM-DD):")
             for item in self.expenses:
                 if item["category"] == category and from_date <= item["date"] <= to_date:
                     print(item)
