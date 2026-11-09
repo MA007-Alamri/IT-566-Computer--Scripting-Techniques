@@ -24,7 +24,14 @@ class MonthlyExpenses:
     #function to find expenses by date or category
 
     def find_expenses(self):
-        pass
+        print("Find Family Expenses")
+        print("1. search by category")
+        print("2. search by date")
+        print("3. search by category and date")
+        print("4. back to main menu")
+        search_choice = input("choose a search option(1-4):")
+
+
 
     #function to show total amount spent
 

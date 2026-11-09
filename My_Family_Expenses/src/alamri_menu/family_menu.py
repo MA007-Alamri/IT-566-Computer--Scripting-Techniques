@@ -26,6 +26,9 @@ class ExpenseFamilyMenu:
 
            if choice == "2":
               self.tracker.view_expenses()
+
+           if choice =="3":
+               self.tracker.find_expenses()
               
               
               
