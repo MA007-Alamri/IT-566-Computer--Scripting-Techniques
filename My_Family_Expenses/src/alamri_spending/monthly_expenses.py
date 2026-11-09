@@ -38,6 +38,17 @@ class MonthlyExpenses:
                     print(item["date"], "$", item["amount"])
 
 
+        if search_choice =="2":
+            print("Date search selected")
+            from_date = input("from (YYYY-MM-DD):");to_date = input("To (YYYY-MM-DD):")
+            for item in self.expenses:
+                date = item["date"]
+                if from_date <= date <= to_date:
+                    print(item)
+
+
+
+
 
 
     #function to show total amount spent
