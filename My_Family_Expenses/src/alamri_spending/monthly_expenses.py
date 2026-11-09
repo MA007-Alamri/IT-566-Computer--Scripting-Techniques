@@ -56,16 +56,12 @@ class MonthlyExpenses:
                     print(item)
 
 
-
-
-
-
-
-
     #function to show total amount spent
 
     def total_expenses(self):
-        pass
+        total = sum(item["amount"] for item in self.expenses)
+        print("Total family expenses: $", total)
+        
 
 
 

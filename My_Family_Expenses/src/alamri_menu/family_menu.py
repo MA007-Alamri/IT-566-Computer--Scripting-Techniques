@@ -29,6 +29,9 @@ class ExpenseFamilyMenu:
 
            if choice =="3":
                self.tracker.find_expenses()
+
+           if choice =="4":
+               self.tracker.total_expenses()
               
               
               
