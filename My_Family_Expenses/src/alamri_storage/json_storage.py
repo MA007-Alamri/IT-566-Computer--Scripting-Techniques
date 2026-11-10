@@ -1,10 +1,17 @@
 import json
 
-class JsonStorge:
+class JsonStorage:
 
     # save family expenses to JOSN
     def save_expenses(self, Expenses):
-        pass
+        period = input("Family expense month (YYYY-MM):")
+        family_records=[]
+
+        for expense in Expenses:
+            if expense["date"][:7]== period:
+                family_records.append(expense)
+
+            print(family_records)
 
 
 

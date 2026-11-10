@@ -1,8 +1,11 @@
 from alamri_spending.monthly_expenses import MonthlyExpenses
 
+from alamri_storage.json_storage import JsonStorage
+
 class ExpenseFamilyMenu:
     def __init__(self):
         self.tracker = MonthlyExpenses()
+        self.storage = JsonStorage()
 
     def display_menu(self):
         while True:
@@ -32,6 +35,9 @@ class ExpenseFamilyMenu:
 
            if choice =="4":
                self.tracker.total_expenses()
+
+           if choice =="5":
+               self.storage.save_expenses(self.tracker.expenses)
               
               
               
