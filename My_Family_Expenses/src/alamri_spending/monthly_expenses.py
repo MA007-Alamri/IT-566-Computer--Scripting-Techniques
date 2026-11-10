@@ -1,6 +1,7 @@
 # Keep track of monthly family expenses
 
 class MonthlyExpenses:
+
     def __init__(self):
         self.expenses = []
 
@@ -56,12 +57,13 @@ class MonthlyExpenses:
                     print(item)
 
 
+
     #function to show total amount spent
 
     def total_expenses(self):
         total = sum(item["amount"] for item in self.expenses)
         print("Total family expenses: $", total)
-        
+
 
 
 
