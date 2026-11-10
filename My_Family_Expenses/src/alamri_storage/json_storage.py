@@ -1,4 +1,5 @@
 import json
+import os
 
 class JsonStorage:
 
@@ -11,10 +12,10 @@ class JsonStorage:
             if expense["date"][:7]== period:
                 family_records.append(expense)
 
-            print(family_records)
-
-
-
+        filename = f"Alamri_Family_{period}.json"
+        print(os.path.abspath(filename))
+        with open (filename, "w") as family_file:
+         family_file.write(json.dumps(family_records, indent=4))
 
 
     #open saved family expenses
