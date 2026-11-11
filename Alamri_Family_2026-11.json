@@ -3,5 +3,15 @@
         "amount": 2000.0,
         "category": "Home",
         "date": "2026-11-09"
+    },
+    {
+        "amount": 1200.0,
+        "category": "kids",
+        "date": "2026-11-09"
+    },
+    {
+        "amount": 1000.0,
+        "category": "personal",
+        "date": "2026-11-09"
     }
 ]

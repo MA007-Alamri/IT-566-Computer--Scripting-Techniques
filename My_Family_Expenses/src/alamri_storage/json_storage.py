@@ -13,9 +13,20 @@ class JsonStorage:
                 family_records.append(expense)
 
         filename = f"Alamri_Family_{period}.json"
+
+        try:
+            with open(filename,"r") as family_file:
+                old_recordes = json.load(family_file)
+        except FileNotFoundError:
+            old_recordes=[]
+
+        for expense in family_records:
+            found= any(item==expense for item in old_recordes)
+            if not found: old_recordes.append(expense)
+        
         print(os.path.abspath(filename))
         with open (filename, "w") as family_file:
-         family_file.write(json.dumps(family_records, indent=4))
+         family_file.write(json.dumps(old_recordes, indent=4))
 
 
     #open saved family expenses
