@@ -41,17 +41,31 @@ class JsonStorage:
         load_choice = input("Choose an option: ")
 
         if load_choice == "1":
-            family_category = input("choose a category:")
-            family_month = input("choose a mounth(YYYY-MM):")
-            filename = f"Alamri_Family_{family_month}.json"
+            family_category = input("Choose a category: ")
+            family_month = input("Choose a month (YYYY-MM): ")
 
-            with open(filename,"r") as family_file:
-                saved_expenses = json.load(family_file)
+        elif load_choice == "2":
+            family_date = input("Choose a date (YYYY-MM-DD): ")
+            family_month = family_date[:7]
 
-            for expense in saved_expenses:
-             if expense["category"].lower() == family_category.lower():
-              print(expense["date"], "-", expense["category"], "-", expense["amount"])
+        else:
+            return
 
+        filename = f"Alamri_Family_{family_month}.json"
+
+        with open(filename, "r") as family_file:
+         saved_expenses = json.load(family_file)
+
+        print("\nAlamri Family Expenses")
+
+        for expense in saved_expenses:
+            if load_choice == "1":
+                if expense["category"].lower() == family_category.lower():
+                   print(expense["category"], "-", expense["amount"], "-", expense["date"])
+
+            elif load_choice == "2":
+                if expense["date"] == family_date:
+                   print(expense["category"], "-", expense["amount"], "-", expense["date"])
 
                             
                             
