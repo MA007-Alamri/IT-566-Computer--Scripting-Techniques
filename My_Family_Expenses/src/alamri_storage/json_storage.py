@@ -45,5 +45,13 @@ class JsonStorage:
             family_month = input("choose a mounth(YYYY-MM):")
             filename = f"Alamri_Family_{family_month}.json"
 
-            
+            with open(filename,"r") as family_file:
+                saved_expenses = json.load(family_file)
+
+            for expense in saved_expenses:
+             if expense["category"].lower() == family_category.lower():
+              print(expense["date"], "-", expense["category"], "-", expense["amount"])
+
+
+                            
                             
