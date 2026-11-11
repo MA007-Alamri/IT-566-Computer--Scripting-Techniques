@@ -4,6 +4,7 @@ import os
 class JsonStorage:
 
     # save family expenses to JOSN
+
     def save_expenses(self, Expenses):
         period = input("Family expense month (YYYY-MM):")
         family_records=[]
@@ -30,5 +31,19 @@ class JsonStorage:
 
 
     #open saved family expenses
+
     def load_expenses(self):
-        pass
+        print("Open Saved Family Expenses")
+        print("1. Open by Category")
+        print("2. Open by Date")
+        print("3. Back to Main Menu")
+
+        load_choice = input("Choose an option: ")
+
+        if load_choice == "1":
+            family_category = input("choose a category:")
+            family_month = input("choose a mounth(YYYY-MM):")
+            filename = f"Alamri_Family_{family_month}.json"
+
+            
+                            

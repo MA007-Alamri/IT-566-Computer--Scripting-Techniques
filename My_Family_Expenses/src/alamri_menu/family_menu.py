@@ -38,6 +38,9 @@ class ExpenseFamilyMenu:
 
            if choice =="5":
                self.storage.save_expenses(self.tracker.expenses)
+
+           if choice=="6":
+               self.storage.load_expenses()
               
               
               
