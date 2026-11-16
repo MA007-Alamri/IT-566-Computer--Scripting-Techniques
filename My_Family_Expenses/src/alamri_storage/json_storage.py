@@ -16,9 +16,7 @@ class JsonStorage:
         except FileNotFoundError:
             old_recordes=[]
 
-        for expense in family_records:
-            found= any(item==expense for item in old_recordes)
-            if not found: old_recordes.append(expense)
+        old_recordes = self.merge_expenses(old_recordes, family_records)
         
         print(os.path.abspath(filename))
         self.write_json_file(filename, old_recordes)
@@ -35,6 +33,16 @@ class JsonStorage:
                 family_records.append(expense)
 
         return family_records
+
+    def merge_expenses(self, old_records, family_records):
+        for expense in family_records:
+            found = any(item == expense for item in old_records)
+            if not found:
+                old_records.append(expense)
+
+        return old_records
+
+    
 
 
     #open saved family expenses
