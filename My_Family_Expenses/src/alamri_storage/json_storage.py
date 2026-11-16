@@ -42,9 +42,6 @@ class JsonStorage:
 
         return old_records
 
-    
-
-
     #open saved family expenses
 
     def display_load_menu(self):
@@ -89,22 +86,23 @@ class JsonStorage:
 
         print("\nAlamri Family Expenses")
 
-        found= False
+        self.display_saved_expenses(saved_expenses, load_choice, family_category if load_choice == "1" else None, family_date if load_choice == "2" else None)             
 
+    def display_saved_expenses(self, saved_expenses, load_choice, family_category=None, family_date=None):
+        found= False
+        
         for expense in saved_expenses:
             if load_choice == "1":
                 if expense["category"].lower() == family_category.lower():
                    print(expense["category"], "-", expense["amount"], "-", expense["date"])
                    found= True
-
+                
             elif load_choice == "2":
                 if expense["date"] == family_date:
                    print(expense["category"], "-", expense["amount"], "-", expense["date"])
                    found= True
-
+                
         if not found:
             print("No matching expenses found.")
-                       
-
                             
                             
