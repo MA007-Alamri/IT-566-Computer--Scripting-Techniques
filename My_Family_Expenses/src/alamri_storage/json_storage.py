@@ -7,11 +7,7 @@ class JsonStorage:
 
     def save_expenses(self, Expenses):
         period = input("Family expense month (YYYY-MM):")
-        family_records=[]
-
-        for expense in Expenses:
-            if expense["date"][:7]== period:
-                family_records.append(expense)
+        family_records = self.filter_month_expenses(Expenses, period)
 
         filename = f"Alamri_Family_{period}.json"
 
@@ -30,6 +26,15 @@ class JsonStorage:
     def write_json_file(self, filename, records):
         with open(filename, "w") as family_file:
            family_file.write(json.dumps(records, indent=4))
+
+    def filter_month_expenses(self, Expenses, period):
+        family_records = []
+
+        for expense in Expenses:
+            if expense["date"][:7] == period:
+                family_records.append(expense)
+
+        return family_records
 
 
     #open saved family expenses
