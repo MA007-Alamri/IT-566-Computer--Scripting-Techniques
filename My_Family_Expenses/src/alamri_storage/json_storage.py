@@ -53,19 +53,37 @@ class JsonStorage:
 
         filename = f"Alamri_Family_{family_month}.json"
 
-        with open(filename, "r") as family_file:
-         saved_expenses = json.load(family_file)
+
+        try:
+            with open(filename, "r") as family_file:
+               saved_expenses = json.load(family_file)
+
+        except FileNotFoundError:
+            print("No saved expenses found for this month.")
+            return
+
+        except json.JSONDecodeError:
+            print("The JSON file is not valid.")
+            return
 
         print("\nAlamri Family Expenses")
+
+        found= False
 
         for expense in saved_expenses:
             if load_choice == "1":
                 if expense["category"].lower() == family_category.lower():
                    print(expense["category"], "-", expense["amount"], "-", expense["date"])
+                   found= True
 
             elif load_choice == "2":
                 if expense["date"] == family_date:
                    print(expense["category"], "-", expense["amount"], "-", expense["date"])
+                   found= True
+
+        if not found:
+            print("No matching expenses found.")
+                       
 
                             
                             
