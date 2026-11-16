@@ -38,6 +38,10 @@ class JsonStorage:
         print("2. Open by Date")
         print("3. Back to Main Menu")
 
+    def read_json_file(self, filename):
+        with open(filename, "r") as family_file:
+            return json.load(family_file)
+        
     def load_expenses(self):
         self.display_load_menu()
 
@@ -58,8 +62,7 @@ class JsonStorage:
 
 
         try:
-            with open(filename, "r") as family_file:
-               saved_expenses = json.load(family_file)
+            saved_expenses = self.read_json_file(filename)
 
         except FileNotFoundError:
             print("No saved expenses found for this month.")
