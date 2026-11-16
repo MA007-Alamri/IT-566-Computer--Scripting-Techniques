@@ -25,8 +25,11 @@ class JsonStorage:
             if not found: old_recordes.append(expense)
         
         print(os.path.abspath(filename))
-        with open (filename, "w") as family_file:
-         family_file.write(json.dumps(old_recordes, indent=4))
+        self.write_json_file(filename, old_recordes)
+
+    def write_json_file(self, filename, records):
+        with open(filename, "w") as family_file:
+           family_file.write(json.dumps(records, indent=4))
 
 
     #open saved family expenses
