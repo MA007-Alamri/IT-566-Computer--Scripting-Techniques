@@ -32,11 +32,14 @@ class JsonStorage:
 
     #open saved family expenses
 
-    def load_expenses(self):
+    def display_load_menu(self):
         print("Open Saved Family Expenses")
         print("1. Open by Category")
         print("2. Open by Date")
         print("3. Back to Main Menu")
+
+    def load_expenses(self):
+        self.display_load_menu()
 
         load_choice = input("Choose an option: ")
 
