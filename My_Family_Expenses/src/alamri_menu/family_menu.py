@@ -10,6 +10,33 @@ class ExpenseFamilyMenu:
         self.storage = JsonStorage()
         self.report = FamilyCSVReport()
 
+    def process_choice(self, choice):
+        if choice == "1":
+            amount = input("expense amount:$") 
+            category = input("expense category:")
+            date= input("expense date (YYYY-MM-DD):")
+            expense = {"amount": float(amount),"category": category, "date": date}
+            self.tracker.add_expense(expense)
+
+        if choice == "2":
+            self.tracker.view_expenses()
+
+        if choice =="3":
+            self.tracker.find_expenses()
+        
+        if choice =="4":
+            self.tracker.total_expenses()
+        
+        if choice =="5":
+            self.storage.save_expenses(self.tracker.expenses)
+        
+        if choice=="6":
+            self.storage.load_expenses()
+        
+        if choice=="7":
+            self.report.export_expenses(self.tracker.expenses)
+                         
+
     def display_menu(self):
         while True:
            print("Alamri Monthly Expense Tracker")
@@ -23,30 +50,8 @@ class ExpenseFamilyMenu:
            print("8. Exit")
            choice = input("Select a number from 1 to 8:")
 
-           if choice == "1":
-              amount = input("expense amount:$") 
-              category = input("expense category:")
-              date= input("expense date (YYYY-MM-DD):")
-              expense = {"amount": float(amount),"category": category, "date": date}
-              self.tracker.add_expense(expense)
+           self.process_choice(choice)
 
-           if choice == "2":
-              self.tracker.view_expenses()
-
-           if choice =="3":
-               self.tracker.find_expenses()
-
-           if choice =="4":
-               self.tracker.total_expenses()
-
-           if choice =="5":
-               self.storage.save_expenses(self.tracker.expenses)
-
-           if choice=="6":
-               self.storage.load_expenses()
-
-           if choice=="7":
-               self.report.export_expenses(self.tracker.expenses)
                  
            if choice == "8":
                print("Happy saving!")
