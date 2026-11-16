@@ -16,8 +16,7 @@ class JsonStorage:
         filename = f"Alamri_Family_{period}.json"
 
         try:
-            with open(filename,"r") as family_file:
-                old_recordes = json.load(family_file)
+            old_recordes = self.read_json_file(filename)  
         except FileNotFoundError:
             old_recordes=[]
 
