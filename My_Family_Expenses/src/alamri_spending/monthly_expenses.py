@@ -1,5 +1,4 @@
 # Keep track of monthly family expenses
-
 class MonthlyExpenses:
 
     def __init__(self):

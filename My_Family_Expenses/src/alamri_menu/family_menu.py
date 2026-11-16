@@ -15,7 +15,14 @@ class ExpenseFamilyMenu:
             amount = input("expense amount:$") 
             category = input("expense category:")
             date= input("expense date (YYYY-MM-DD):")
-            expense = {"amount": float(amount),"category": category, "date": date}
+            
+            try:
+                amount = float(amount)
+            except ValueError:
+                print("Invalid amount. Please enter a number.")
+                return
+            
+            expense = {"amount": amount, "category": category, "date": date}
             self.tracker.add_expense(expense)
 
         if choice == "2":
