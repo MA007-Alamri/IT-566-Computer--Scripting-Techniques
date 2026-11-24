@@ -11,3 +11,7 @@ CREATE TABLE family_expenses (
    expense_date DATE NOT NULL
 );
 
+-- Set expense_id as the primary key
+ALTER TABLE family_expenses
+    ADD PRIMARY KEY (expense_id);
+    
