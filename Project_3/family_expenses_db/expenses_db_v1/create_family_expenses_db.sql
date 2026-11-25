@@ -19,3 +19,16 @@ ALTER TABLE family_expenses
 ALTER TABLE family_expenses
     MODIFY expense_id INTEGER NOT NULL AUTO_INCREMENT;
 
+-- Define the category table
+CREATE TABLE expense_category (
+    category_id INTEGER NOT NULL,
+    category_name VARCHAR(50) NOT NULL
+    );
+
+-- Set category_id as the primary key
+ALTER TABLE expense_category
+    ADD PRIMARY KEY (category_id);
+
+-- Automatically generate category ID
+ALTER TABLE expense_category
+    MODIFY category_id INTEGER NOT NULL AUTO_INCREMENT;
