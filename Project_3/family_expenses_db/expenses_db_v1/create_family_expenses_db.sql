@@ -6,7 +6,7 @@ USE family_expenses_db;
 -- Define the family_expenses table
 CREATE TABLE family_expenses (
    expense_id INTEGER NOT NULL,
-   expense_category VARCHAR(50) NOT NULL,
+   category_id INTEGER NOT NULL,
    expense_amount DECIMAL(10, 2) NOT NULL,
    expense_date DATE NOT NULL
 );
@@ -32,3 +32,9 @@ ALTER TABLE expense_category
 -- Automatically generate category ID
 ALTER TABLE expense_category
     MODIFY category_id INTEGER NOT NULL AUTO_INCREMENT;
+
+-- connect the family_expenses table to the expense_category table
+ALTER TABLE family_expenses
+    ADD CONSTRAINT fk_category
+    FOREIGN KEY (category_id) REFERENCES expense_category(category_id)
+    ON UPDATE CASCADE;
