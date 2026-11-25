@@ -1,0 +1,23 @@
+# Family expenses application settings
+
+meta:
+  version: v1
+  app_name: Family Expenses
+  developer: Maram Alamri
+  log_prefix: family_expenses
+
+database:
+  pool:
+    name: family_expenses_pool
+    size: 10
+    reset_session: true
+    connection_timeout: 10  #seconds
+    autocommit: false
+
+  connection:
+    config:
+      database: family_expenses_db
+      user: user_name
+      password: password
+      host: localhost
+      port: 3306
