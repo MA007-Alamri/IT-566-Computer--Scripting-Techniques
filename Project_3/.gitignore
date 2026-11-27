@@ -1,3 +1,5 @@
 # Ignore private database settings
 
 config/family_expenses_config.yaml
+Pipfile.lock
+.venv
